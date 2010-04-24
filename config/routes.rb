@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :usrs
-
+  
   
   # registration and login
   map.resource :registration, :only => [:new, :create, :edit, :update, :destroy], :as => :users,
@@ -13,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :users do |users|
+    map.resources :usrs
     map.resources :usocials
     map.resources :interests
     map.resources :educations

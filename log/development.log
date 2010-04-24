@@ -3548,3 +3548,659 @@ Migrating to CreateUsrs (20100424195827)
   [4;36;1mUsocial Create (1.0ms)[0m   [0;1mINSERT INTO `usocials` (`created_at`, `updated_at`, `atoken`, `application`, `user_id`, `application_login`, `asecret`) VALUES('2010-04-24 20:32:00', '2010-04-24 20:32:00', '7cBqNVHdlNZw7DuC', 'MySpace', 10, 'Wilbert', 'jjtLNGNPxo0xLHz8')[0m
   [4;35;1mSQL (96.0ms)[0m   [0mCOMMIT[0m
   [4;36;1mUsocial Load (0.0ms)[0m   [0;1mSELECT * FROM `usocials` WHERE (`usocials`.`id` = 30) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:17:52) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+ActionView::TemplateError (undefined method `user_events_path' for #<ActionView::Base:0x7147394>) on line #15 of app/views/layouts/_header.html.haml:
+12:   
+13:   .menu
+14:     - [["Dashboard", "users", nil], ["Calendar", "events", :events]].each do |link_name, link_controller, link_path|
+15:       = link_to link_name, [User.find(@user.id), link_path], :class => (controller_name == link_controller) ? "current" : nil
+16: %br
+
+    app/views/layouts/_header.html.haml:15:in `_run_haml_app47views47layouts47_header46html46haml_locals_header_object'
+    app/views/layouts/_header.html.haml:14:in `each'
+    app/views/layouts/_header.html.haml:14:in `_run_haml_app47views47layouts47_header46html46haml_locals_header_object'
+    haml (2.2.21) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.21) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.21) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/layouts/application.html.haml:34:in `_run_haml_app47views47layouts47application46html46haml'
+    haml (2.2.21) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.21) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/users_controller.rb:12:in `me'
+    haml (2.2.21) rails/./lib/sass/plugin/rails.rb:20:in `process'
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (169.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:52) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (0.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (4.0ms)
+Completed in 147ms (View: 36, DB: 11) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:53) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:53) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:53) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:53) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:53) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:54) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:54) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (2.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (0.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 233ms (View: 33, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:55) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:55) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (2.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (9.0ms)
+Completed in 154ms (View: 39, DB: 13) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:55) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (1.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (0.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 142ms (View: 28, DB: 12) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:55) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:55) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (2.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (0.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 145ms (View: 27, DB: 14) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:56) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:56) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:57) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (4.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (1.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (2.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 139ms (View: 26, DB: 13) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:57) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:57) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 222ms (View: 30, DB: 10) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:57) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 151ms (View: 26, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:58) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:58) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (0.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (4.0ms)
+Completed in 154ms (View: 31, DB: 21) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:20:58) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:58) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 227ms (View: 23, DB: 17) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:59) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (0.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 146ms (View: 30, DB: 11) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:59) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (0.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 149ms (View: 30, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:59) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 221ms (View: 27, DB: 11) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:20:59) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (1.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (2.0ms)
+Completed in 142ms (View: 31, DB: 12) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:00) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:01) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 138ms (View: 25, DB: 12) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:32) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (2.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 221ms (View: 26, DB: 14) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:34) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:34) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+Redirected to http://localhost:3001/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (2.0ms)
+Completed in 148ms (View: 34, DB: 13) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:35) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (1.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (0.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (4.0ms)
+Completed in 224ms (View: 28, DB: 14) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:36) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (1.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (2.0ms)
+Completed in 140ms (View: 30, DB: 12) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:36) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (0.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 163ms (View: 27, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:36) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (0.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (4.0ms)
+Completed in 216ms (View: 25, DB: 12) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:36) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:37) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (1.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (6.0ms)
+Completed in 154ms (View: 30, DB: 13) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:37) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (1.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (0.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 145ms (View: 30, DB: 11) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:37) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-24 18:21:37) [GET]
+Redirected to http://localhost:3001/
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:37) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUcontact Load (0.0ms)[0m   [0mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUcontact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mUsr Load (1.0ms)[0m   [0mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;36;1mUsr Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `usrs`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 142ms (View: 27, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-04-24 18:21:38) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUcontact Load (0.0ms)[0m   [0;1mSELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUcontact Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `ucontacts`[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mUsr Load (0.0ms)[0m   [0;1mSELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1[0m
+  [4;35;1mUsr Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `usrs`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered layouts/_header (3.0ms)
+Completed in 144ms (View: 29, DB: 10) | 200 OK [http://localhost/]
