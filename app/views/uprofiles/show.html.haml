@@ -1,0 +1,19 @@
+%h1.heading
+  = "Uprofile %s" % @uprofile.id
+  
+- content_tag_for(:dl, @uprofile) do
+  %dt.label= 'User'
+  %dd.user_id= h @uprofile.try(:user_id)
+  %dt.label= 'Summary'
+  %dd.summary= h @uprofile.try(:summary)
+  %dt.label= 'Specialities'
+  %dd.specialities= h @uprofile.try(:specialities)
+  %dt.label= 'Honorsawards'
+  %dd.honorsawards= h @uprofile.try(:honorsawards)
+  %dt.label= 'Linkedinurl'
+  %dd.linkedinurl= h @uprofile.try(:linkedinurl)
+  
+%p.actions
+  = link_to 'Edit', edit_uprofile_path(@uprofile)
+  |
+  = link_to 'Index', uprofiles_path

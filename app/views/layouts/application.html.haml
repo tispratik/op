@@ -1,0 +1,58 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
+    = stylesheet_link_tag 'reset', 'ui-lightness/jquery-ui-1.7.2.custom', 'formtastic', 'formtastic_changes', 'application', "event_calendar", "colorbox", :cache => "base"
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery/jquery-ui-1.7.2.custom.min', 'jquery.colorbox-min', 'application', :cache => "base"
+    = stylesheet_link_tag 'jquery.autocomplete'
+    = javascript_include_tag 'jquery.autocomplete.pack', 'jquery.validate.pack'
+  %body
+    / #preloader{:style => "display:none"}
+    /   #preloader-spinner
+    /     %img{:src => "#{root_url}/images/spinner.gif"}
+    
+    #container
+      #header
+        %span.links
+          = link_to "View Public Profile"
+          = link_to "LinkedIn Profile", nil, :class => :orange
+          = link_to "Account"
+        %span.status
+          - if logged_in?
+            = link_to "Edit Profile", edit_registration_path, :popup => :true
+            = link_to "Logout #{current_user}", destroy_user_session_path
+      #sidebar.left
+        = image_tag('logo.png')
+        .home{:class => (request.request_uri == root_path || (current_user && request.request_uri == polymorphic_path(current_user))) ? "current" : nil}
+          = link_to "Homepage", root_path
+        = yield(:sidebar)
+      #content.right
+        #flash_messages
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :class => "flash #{name}" if msg.is_a?(String)
+        = render :partial => "layouts/header"
+        = yield
+        
+      .clear
+      /
+        #wrapper{ :style => "padding: 10px 10px 10px 10px;" }
+          s
+          [if lt IE 7]>
+          <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+          <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+          <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+          <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+          <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+          <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+          <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+          </div>
+          <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+          <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+          <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+          <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+          </div>
+          </div>
+          <![endif]
+      =# render :partial => "layouts/header"
+      

@@ -1,0 +1,20 @@
+%h1.heading
+  = "Uprofiles"
+  
+%p.actions
+  = link_to 'New Uprofile', new_uprofile_path
+  
+%table
+  %thead.header
+    %tr
+      %th.user_id= 'User'
+      %th.summary= 'Summary'
+      %th.specialities= 'Specialities'
+      %th.honorsawards= 'Honorsawards'
+      %th.linkedinurl= 'Linkedinurl'
+      %th.actions= 'Actions'
+  %tbody.items.uprofiles
+    - @uprofiles.each do |uprofile|
+      = render 'item', :uprofile => uprofile
+      
+= will_paginate(@uprofiles)

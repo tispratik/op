@@ -2,8 +2,8 @@
   = "Ucontact %s" % @ucontact.id
   
 - content_tag_for(:dl, @ucontact) do
-  %dt.label= 'Email'
-  %dd.email= h @ucontact.try(:email)
+  %dt.label= 'User'
+  %dd.user_id= h @ucontact.try(:user_id)
   %dt.label= 'Country'
   %dd.country_id= h @ucontact.try(:country_id)
   %dt.label= 'State'

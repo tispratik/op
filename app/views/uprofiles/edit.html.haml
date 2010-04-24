@@ -1,0 +1,10 @@
+%h1.heading
+  = "Editing uprofile %s" % @uprofile.id
+  
+- semantic_form_for(@uprofile) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', uprofiles_path

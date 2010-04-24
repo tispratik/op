@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#   
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Major.create(:name => 'Daley', :city => cities.first)
+require "#{RAILS_ROOT}/db/blueprints"
+
+[Usr, Ucontact, Education, Interest, Workposition, Uprofile].each(&:delete_all)
+
+p "creating usr"
+
+User.all.each do |u|
+  Usr.make(:user => u)
+  Ucontact.make(:user => u)
+  3.times do
+    Uprofile.make(:user => u)
+    Interest.make(:user => u)
+    Education.make(:user => u)
+    Workposition.make(:user => u)
+    Usocial.make(:user => u)
+  end
+end
