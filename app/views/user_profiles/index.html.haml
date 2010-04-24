@@ -1,0 +1,20 @@
+%h1.heading
+  = "User profiles"
+  
+%p.actions
+  = link_to 'New User profile', new_user_profile_path
+  
+%table
+  %thead.header
+    %tr
+      %th.user_id= 'User'
+      %th.summary= 'Summary'
+      %th.specialities= 'Specialities'
+      %th.honorsawards= 'Honorsawards'
+      %th.linkedinurl= 'Linkedinurl'
+      %th.actions= 'Actions'
+  %tbody.items.user_profiles
+    - @user_profiles.each do |user_profile|
+      = render 'item', :user_profile => user_profile
+      
+= will_paginate(@user_profiles)

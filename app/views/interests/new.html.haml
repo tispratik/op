@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Interest'
+  
+- semantic_form_for(@interest) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', interests_path

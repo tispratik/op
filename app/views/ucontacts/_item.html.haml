@@ -1,0 +1,29 @@
+- content_tag_for(:tr, ucontact, :class => cycle(:odd, :even)) do
+  %td.email= h ucontact.try(:email)
+  %td.country_id= h ucontact.try(:country_id)
+  %td.state= h ucontact.try(:state)
+  %td.city= h ucontact.try(:city)
+  %td.street1= h ucontact.try(:street1)
+  %td.street2= h ucontact.try(:street2)
+  %td.zip= h ucontact.try(:zip)
+  %td.is_address_public= h ucontact.try(:is_address_public)
+  %td.telnum1= h ucontact.try(:telnum1)
+  %td.telnum1_type= h ucontact.try(:telnum1_type)
+  %td.is_telnum1_public= h ucontact.try(:is_telnum1_public)
+  %td.telnum2= h ucontact.try(:telnum2)
+  %td.telnum2_type= h ucontact.try(:telnum2_type)
+  %td.is_telnum2_public= h ucontact.try(:is_telnum2_public)
+  %td.webpage1= h ucontact.try(:webpage1)
+  %td.webpage1_type= h ucontact.try(:webpage1_type)
+  %td.webpage2= h ucontact.try(:webpage2)
+  %td.webpage2_type= h ucontact.try(:webpage2_type)
+  %td.webpage3= h ucontact.try(:webpage3)
+  %td.webpage3_type= h ucontact.try(:webpage3_type)
+  %td.time_zone= h ucontact.try(:time_zone)
+  %td.short_description= h ucontact.try(:short_description)
+  %td.actions
+    = link_to 'Show', ucontact_path(ucontact)
+    |
+    = link_to 'Edit', edit_ucontact_path(ucontact)
+    |
+    = link_to 'Destroy', ucontact, :confirm => 'Are you sure?', :method => :delete

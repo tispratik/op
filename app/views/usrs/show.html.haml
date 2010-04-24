@@ -1,0 +1,21 @@
+%h1.heading
+  = "Usr %s" % @usr.id
+  
+- content_tag_for(:dl, @usr) do
+  %dt.label= 'User'
+  %dd.user_id= h @usr.try(:user_id)
+  %dt.label= 'String'
+  %dd.string= h @usr.try(:string)
+  %dt.label= 'String'
+  %dd.string= h @usr.try(:string)
+  %dt.label= 'String'
+  %dd.string= h @usr.try(:string)
+  %dt.label= 'Dob'
+  %dd.dob= h @usr.try(:dob)
+  %dt.label= 'Is dp gravatar'
+  %dd.is_dp_gravatar= h @usr.try(:is_dp_gravatar)
+  
+%p.actions
+  = link_to 'Edit', edit_usr_path(@usr)
+  |
+  = link_to 'Index', usrs_path

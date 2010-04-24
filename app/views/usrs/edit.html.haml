@@ -1,0 +1,10 @@
+%h1.heading
+  = "Editing usr %s" % @usr.id
+  
+- semantic_form_for(@usr) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', usrs_path

@@ -1,0 +1,10 @@
+%h1.heading
+  = "Editing ucontact %s" % @ucontact.id
+  
+- semantic_form_for(@ucontact) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', ucontacts_path

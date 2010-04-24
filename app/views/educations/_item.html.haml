@@ -1,0 +1,15 @@
+- content_tag_for(:tr, education, :class => cycle(:odd, :even)) do
+  %td.user_id= h education.try(:user_id)
+  %td.organization_id= h education.try(:organization_id)
+  %td.degree= h education.try(:degree)
+  %td.field= h education.try(:field)
+  %td.education_type= h education.try(:education_type)
+  %td.start_date= h education.try(:start_date)
+  %td.end_date= h education.try(:end_date)
+  %td.description= h education.try(:description)
+  %td.actions
+    = link_to 'Show', education_path(education)
+    |
+    = link_to 'Edit', edit_education_path(education)
+    |
+    = link_to 'Destroy', education, :confirm => 'Are you sure?', :method => :delete

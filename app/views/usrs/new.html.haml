@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Usr'
+  
+- semantic_form_for(@usr) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', usrs_path

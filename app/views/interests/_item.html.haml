@@ -1,0 +1,10 @@
+- content_tag_for(:tr, interest, :class => cycle(:odd, :even)) do
+  %td.user_id= h interest.try(:user_id)
+  %td.name= h interest.try(:name)
+  %td.description= h interest.try(:description)
+  %td.actions
+    = link_to 'Show', interest_path(interest)
+    |
+    = link_to 'Edit', edit_interest_path(interest)
+    |
+    = link_to 'Destroy', interest, :confirm => 'Are you sure?', :method => :delete

@@ -1,0 +1,37 @@
+%h1.heading
+  = "Ucontacts"
+  
+%p.actions
+  = link_to 'New Ucontact', new_ucontact_path
+  
+%table
+  %thead.header
+    %tr
+      %th.email= 'Email'
+      %th.country_id= 'Country'
+      %th.state= 'State'
+      %th.city= 'City'
+      %th.street1= 'Street1'
+      %th.street2= 'Street2'
+      %th.zip= 'Zip'
+      %th.is_address_public= 'Is address public'
+      %th.telnum1= 'Telnum1'
+      %th.telnum1_type= 'Telnum1 type'
+      %th.is_telnum1_public= 'Is telnum1 public'
+      %th.telnum2= 'Telnum2'
+      %th.telnum2_type= 'Telnum2 type'
+      %th.is_telnum2_public= 'Is telnum2 public'
+      %th.webpage1= 'Webpage1'
+      %th.webpage1_type= 'Webpage1 type'
+      %th.webpage2= 'Webpage2'
+      %th.webpage2_type= 'Webpage2 type'
+      %th.webpage3= 'Webpage3'
+      %th.webpage3_type= 'Webpage3 type'
+      %th.time_zone= 'Time zone'
+      %th.short_description= 'Short description'
+      %th.actions= 'Actions'
+  %tbody.items.ucontacts
+    - @ucontacts.each do |ucontact|
+      = render 'item', :ucontact => ucontact
+      
+= will_paginate(@ucontacts)

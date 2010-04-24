@@ -1,2 +1,8 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+#Scaffold
+ruby script/generate dry_scaffold Usr user_id:integer string:first_name string:last_name string:one_line_bio dob:date is_dp_gravatar:boolean
+ruby script/generate dry_scaffold UserProfile user_id:string summary:string specialities:string honorsawards:string linkedinurl:string
+ruby script/generate dry_scaffold Ucontact email:string country_id:string state:string city:string street1:string street2:string zip:string is_address_public:string telnum1:string telnum1_type:integer is_telnum1_public:boolean telnum2:string telnum2_type:integer is_telnum2_public:boolean webpage1:string webpage1_type:integer webpage2:string webpage2_type:integer webpage3:string webpage3_type:integer time_zone:string short_description:string
+ruby script/generate dry_scaffold Workposition user_id:integer organization_id:integer title:string start_date:date end_date:date description:text
+ruby script/generate dry_scaffold Education user_id:integer organization_id:integer degree:string field:string education_type:string start_date:string end_date:string description:text
+ruby script/generate dry_scaffold Interest user_id:integer name:string description:text
+ruby script/generate dry_scaffold Usocial socialable_type:string socialable_id:integer application:string application_login:string atoken:string asecret:string

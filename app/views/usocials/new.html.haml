@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Usocial'
+  
+- semantic_form_for(@usocial) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', usocials_path

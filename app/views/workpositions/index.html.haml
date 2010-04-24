@@ -1,0 +1,21 @@
+%h1.heading
+  = "Workpositions"
+  
+%p.actions
+  = link_to 'New Workposition', new_workposition_path
+  
+%table
+  %thead.header
+    %tr
+      %th.user_id= 'User'
+      %th.organization_id= 'Organization'
+      %th.title= 'Title'
+      %th.start_date= 'Start date'
+      %th.end_date= 'End date'
+      %th.description= 'Description'
+      %th.actions= 'Actions'
+  %tbody.items.workpositions
+    - @workpositions.each do |workposition|
+      = render 'item', :workposition => workposition
+      
+= will_paginate(@workpositions)

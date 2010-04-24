@@ -1,0 +1,23 @@
+%h1.heading
+  = "Educations"
+  
+%p.actions
+  = link_to 'New Education', new_education_path
+  
+%table
+  %thead.header
+    %tr
+      %th.user_id= 'User'
+      %th.organization_id= 'Organization'
+      %th.degree= 'Degree'
+      %th.field= 'Field'
+      %th.education_type= 'Education type'
+      %th.start_date= 'Start date'
+      %th.end_date= 'End date'
+      %th.description= 'Description'
+      %th.actions= 'Actions'
+  %tbody.items.educations
+    - @educations.each do |education|
+      = render 'item', :education => education
+      
+= will_paginate(@educations)

@@ -1,0 +1,21 @@
+%h1.heading
+  = "Usrs"
+  
+%p.actions
+  = link_to 'New Usr', new_usr_path
+  
+%table
+  %thead.header
+    %tr
+      %th.user_id= 'User'
+      %th.string= 'String'
+      %th.string= 'String'
+      %th.string= 'String'
+      %th.dob= 'Dob'
+      %th.is_dp_gravatar= 'Is dp gravatar'
+      %th.actions= 'Actions'
+  %tbody.items.usrs
+    - @usrs.each do |usr|
+      = render 'item', :usr => usr
+      
+= will_paginate(@usrs)

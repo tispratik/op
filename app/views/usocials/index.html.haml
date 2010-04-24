@@ -1,0 +1,21 @@
+%h1.heading
+  = "Usocials"
+  
+%p.actions
+  = link_to 'New Usocial', new_usocial_path
+  
+%table
+  %thead.header
+    %tr
+      %th.socialable_type= 'Socialable type'
+      %th.socialable_id= 'Socialable'
+      %th.application= 'Application'
+      %th.application_login= 'Application login'
+      %th.atoken= 'Atoken'
+      %th.asecret= 'Asecret'
+      %th.actions= 'Actions'
+  %tbody.items.usocials
+    - @usocials.each do |usocial|
+      = render 'item', :usocial => usocial
+      
+= will_paginate(@usocials)

@@ -1,0 +1,13 @@
+- content_tag_for(:tr, workposition, :class => cycle(:odd, :even)) do
+  %td.user_id= h workposition.try(:user_id)
+  %td.organization_id= h workposition.try(:organization_id)
+  %td.title= h workposition.try(:title)
+  %td.start_date= h workposition.try(:start_date)
+  %td.end_date= h workposition.try(:end_date)
+  %td.description= h workposition.try(:description)
+  %td.actions
+    = link_to 'Show', workposition_path(workposition)
+    |
+    = link_to 'Edit', edit_workposition_path(workposition)
+    |
+    = link_to 'Destroy', workposition, :confirm => 'Are you sure?', :method => :delete

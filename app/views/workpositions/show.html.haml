@@ -1,0 +1,21 @@
+%h1.heading
+  = "Workposition %s" % @workposition.id
+  
+- content_tag_for(:dl, @workposition) do
+  %dt.label= 'User'
+  %dd.user_id= h @workposition.try(:user_id)
+  %dt.label= 'Organization'
+  %dd.organization_id= h @workposition.try(:organization_id)
+  %dt.label= 'Title'
+  %dd.title= h @workposition.try(:title)
+  %dt.label= 'Start date'
+  %dd.start_date= h @workposition.try(:start_date)
+  %dt.label= 'End date'
+  %dd.end_date= h @workposition.try(:end_date)
+  %dt.label= 'Description'
+  %dd.description= h @workposition.try(:description)
+  
+%p.actions
+  = link_to 'Edit', edit_workposition_path(@workposition)
+  |
+  = link_to 'Index', workpositions_path
