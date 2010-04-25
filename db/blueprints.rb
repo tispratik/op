@@ -6,7 +6,7 @@ require 'time_extensions'
 
 countries = Country.all.map(&:ison)
 a_phone_type = Decode.all_values_by_decode_name("OP_Phone_Type")
-a_personal_web_page_type = Decode.all_values_by_decode_name("OP_Website_Type")
+a_web_page_type = Decode.all_values_by_decode_name("OP_Website_Type")
 
 Usr.blueprint do
   first_name            { Faker::Name.first_name }
@@ -32,9 +32,9 @@ Ucontact.blueprint do
   webpage1       { 'http://' + Faker::Internet.domain_name }
   webpage2       { 'http://' + Faker::Internet.domain_name }
   webpage3       { 'http://' + Faker::Internet.domain_name }
-  webpage1_type  { a_personal_web_page_type.rand }
-  webpage2_type  { a_personal_web_page_type.rand }
-  webpage3_type  { a_personal_web_page_type.rand }
+  webpage1_type  { a_web_page_type.rand }
+  webpage2_type  { a_web_page_type.rand }
+  webpage3_type  { a_web_page_type.rand }
   short_description      { Populator.words(10..50) }
   time_zone      { Time.random.zone }
   is_address_public   { Random.boolean }
