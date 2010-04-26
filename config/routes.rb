@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
   
-  
   # registration and login
   map.resource :registration, :only => [:new, :create, :edit, :update, :destroy], :as => :users,
       :path_names => {:new => :sign_up}, :member => {:validate => :post}, :collection => {:regions => :get, :cities => :get}
@@ -20,6 +19,10 @@ ActionController::Routing::Routes.draw do |map|
     map.resources :ucontacts
     map.resources :uprofiles
   end
+  
+  map.resources :assets, :only => [:destroy]
+  map.connect '/assets/:id/:style', :controller => 'assets', :action => 'show', :conditions => {:method => :get}
+  map.connect "live_validations/:action", :controller => "live_validations"
   
   map.root :controller => :users, :action => :me
   

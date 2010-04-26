@@ -3,12 +3,12 @@ class RegistrationsController < ApplicationController
   before_filter :login_required, :only => [:edit, :update]
   
   def new
-    @user = User.new(:contact => Contact.new)
+    @user = User.new(:ucontact => Ucontact.new, :usr => Usr.new)
   end
   
   def create
     @user = User.new(params[:user])
-    @user.contact.set_location_from_ip(request.env['REMOTE_ADDR'])
+    #@user.ucontact.set_location_from_ip(request.env['REMOTE_ADDR'])
     @user.valid?
     if @user.errors.empty?
       @user.save

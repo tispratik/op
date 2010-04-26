@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     a.validates_format_of_login_field_options :with => /^\w+$/, :message => "only numbers, letters and underscore allowed"
   end
   
-  def self.find_by_username_or_email(login)
+  def self.find_by_username_or_login_email(login)
     find_by_username(login) || find_by_login_email(login)
   end
   

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   
   def get_query
     qry = "@project.users"
-    qry = qry + sort_order('ascend_by_first_name') 
+    qry = qry + sort_order('ascend_by_username') 
     qry = qry + ".paginate(:page => #{params[:page] || 1}, :per_page => 8)"
   end
   

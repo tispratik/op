@@ -45,11 +45,11 @@
       }, "json")
     })
 
-    $('#user_contact_attributes_email').blur(function() {
+    $('#user_login_email').blur(function() {
       var self = this;
-      $.post("#{validate_registration_path}", {'user[contact_attributes][email]': this.value}, function(data) {
-        if (data["contact.email"]) {
-          add_message_to_field(self, data["contact.email"], false);
+      $.post("#{validate_registration_path}", {'user[login_email]': this.value}, function(data) {
+        if (data["login_email"]) {
+          add_message_to_field(self, data["login_email"], false);
         } else {
           add_message_to_field(self, "OK", true);
         }
@@ -73,14 +73,14 @@
 
 - semantic_form_for @user, :url => registration_path, :html => {:class => 'validate'} do |f|
   
-  
   - f.inputs do
     = f.input :username
-    - f.inputs :for => :contact do |cf|
-      = cf.input :email
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :one_line_bio
+    = f.input :login_email
+    - f.inputs :for => :usr do |uf|
+      = uf.input :first_name
+      = uf.input :last_name
+      = uf.input :one_line_bio
+      
     = f.input :password
     = f.input :password_confirmation
   
