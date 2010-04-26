@@ -5244,3 +5244,568 @@ CACHE (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
 User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
 Rendered layouts/_header (3.0ms)
 Completed in 205ms (View: 31, DB: 9) | 200 OK [http://localhost/users/dummy]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:19:17) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Redirected to http://pratik.homedns.org:3001/sign_in
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 426ms (DB: 0) | 302 Found [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#new (for 97.91.155.3 at 2010-04-26 01:19:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NameError (uninitialized constant UserSessionsController):
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#new (for 97.91.155.3 at 2010-04-26 01:19:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NameError (uninitialized constant UserSessionsController):
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:22:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 122ms (View: 39, DB: 1) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:22:39) [GET]
+Redirected to http://pratik.homedns.org:3001/sign_in
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:22:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 134ms (View: 23, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#create (for 97.91.155.3 at 2010-04-26 01:22:47) [POST]
+  Parameters: {"commit"=>"Sign in", "user_session"=>{"username"=>"dummy", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"WeJZmOYHKkLHuVIrMD0OL+CJ+hv6kw/8ODQBFmcVmmU=", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+SQL (0.0ms)  BEGIN
+User Update (1.0ms)  UPDATE `users` SET `updated_at` = '2010-04-26 06:22:47', `perishable_token` = '-u1-oG4vqyk_qvPvCdKb' WHERE `id` = 1
+SQL (1.0ms)  COMMIT
+Redirected to http://pratik.homedns.org:3001/
+Completed in 123ms (DB: 1) | 302 Found [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:22:47) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 268ms (View: 27, DB: 9) | 200 OK [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:22:48) [GET]
+Redirected to http://pratik.homedns.org:3001/
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:22:48) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (6.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (2.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (6.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (6.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 228ms (View: 31, DB: 15) | 200 OK [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:22:51) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (2.0ms)
+Completed in 284ms (View: 30, DB: 10) | 200 OK [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:22:52) [GET]
+Redirected to http://pratik.homedns.org:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:22:52) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (7.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 207ms (View: 31, DB: 10) | 200 OK [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#destroy (for 97.91.155.3 at 2010-04-26 01:22:53) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (6.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+
+NameError (uninitialized constant UserSessionsController::Project):
+  app/controllers/user_sessions_controller.rb:26:in `destroy'
+  haml (2.2.21) [v] rails/./lib/sass/plugin/rails.rb:20:in `process'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#destroy (for 97.91.155.3 at 2010-04-26 01:23:15) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Redirected to http://pratik.homedns.org:3001/
+Completed in 69ms (DB: 0) | 302 Found [http://pratik.homedns.org/sign_out]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:15) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Redirected to http://pratik.homedns.org:3001/sign_in
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 140ms (DB: 0) | 302 Found [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 79ms (View: 13, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:16) [GET]
+Redirected to http://pratik.homedns.org:3001/sign_in
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 90ms (View: 14, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#create (for 97.91.155.3 at 2010-04-26 01:23:20) [POST]
+  Parameters: {"commit"=>"Sign in", "user_session"=>{"username"=>"dummy", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"pYNrAb8wKqPrzI30pTsy7YgnWcptvTTic8+5Ra39fQU=", "controller"=>"user_sessions"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+SQL (0.0ms)  BEGIN
+User Update (1.0ms)  UPDATE `users` SET `updated_at` = '2010-04-26 06:23:20', `perishable_token` = 'zA-7_lSTQ5Vl7cQJqmyL' WHERE `id` = 1
+SQL (1.0ms)  COMMIT
+Redirected to http://pratik.homedns.org:3001/
+Completed in 167ms (DB: 0) | 302 Found [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:20) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 189ms (View: 31, DB: 8) | 200 OK [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:21) [GET]
+Redirected to http://pratik.homedns.org:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:21) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (7.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (7.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (4.0ms)
+Completed in 340ms (View: 29, DB: 12) | 200 OK [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#show (for 97.91.155.3 at 2010-04-26 01:23:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"dummy", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (2.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+CACHE (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 213ms (View: 33, DB: 9) | 200 OK [http://pratik.homedns.org/users/dummy]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:24) [GET]
+Redirected to http://pratik.homedns.org:3001/users/dummy
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#show (for 97.91.155.3 at 2010-04-26 01:23:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"dummy", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (6.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (6.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (6.0ms)  SHOW FIELDS FROM `ucontacts`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+CACHE (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 343ms (View: 33, DB: 16) | 200 OK [http://pratik.homedns.org/users/dummy]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:25) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (2.0ms)
+Completed in 208ms (View: 32, DB: 10) | 200 OK [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:25) [GET]
+Redirected to http://pratik.homedns.org:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:25) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (2.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 293ms (View: 30, DB: 7) | 200 OK [http://pratik.homedns.org/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#destroy (for 97.91.155.3 at 2010-04-26 01:23:27) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (3.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Redirected to http://pratik.homedns.org:3001/
+Completed in 168ms (DB: 6) | 302 Found [http://pratik.homedns.org/sign_out]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:27) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (6.0ms)  SHOW FIELDS FROM `users`
+Redirected to http://pratik.homedns.org:3001/sign_in
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 78ms (DB: 0) | 302 Found [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 164ms (View: 15, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:27) [GET]
+Redirected to http://pratik.homedns.org:3001/sign_in
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 88ms (View: 14, DB: 1) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 97.91.155.3 at 2010-04-26 01:23:39) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Redirected to http://pratik.homedns.org:3001/sign_in
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 65ms (DB: 1) | 302 Found [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 85ms (View: 15, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 97.91.155.3 at 2010-04-26 01:23:39) [GET]
+Redirected to http://pratik.homedns.org:3001/sign_in
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 97.91.155.3 at 2010-04-26 01:23:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 82ms (View: 15, DB: 1) | 200 OK [http://pratik.homedns.org/sign_in]
