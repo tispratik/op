@@ -1,43 +1,38 @@
+login: &login
+  adapter: mysql
+  encoding: utf8
+  collation: utf8_general_ci  
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  host: localhost
+     
 development:
-  adapter: mysql
-  encoding: utf8
-  collation: utf8_general_ci  
-  reconnect: false
   database: op_development
-  pool: 5
   username: root
-  password:
-  host: localhost
-
+  password: 
+  <<: *login
+  
 production:
-  adapter: mysql
-  encoding: utf8
-  collation: utf8_general_ci  
-  reconnect: false
   database: op_production
-  pool: 5
   username: root
-  password:
-  host: localhost
-  
-va:
-  adapter: mysql
-  encoding: utf8
-  collation: utf8_general_ci
-  reconnect: false
+  password: 
+  <<: *login
+    
+va_development:
   database: va_development
-  pool: 5
   username: root
-  password:
-  host: localhost
-  
+  password: 
+  <<: *login
+
+va_production:
+  database: va_production
+  username: root
+  password: 
+  <<: *login
+    
 ref_area:
-  adapter: mysql
-  encoding: utf8
-  collation: utf8_general_ci
-  reconnect: false
   database: ref_area_dev
-  pool: 5
   username: root
-  password:
-  host: localhost  
+  password: 
+  <<: *login

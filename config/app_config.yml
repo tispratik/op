@@ -1,0 +1,18 @@
+development:
+  domain: localhost:3000
+  smtp_address: "smtp.gmail.com"
+  smtp_port: 587
+  smtp_domain: "www.gmail.com"
+  smtp_username: "usinpac.backstage@gmail.com"
+  smtp_password: "3142771639"
+  
+test:
+  domain: test.host
+
+production:
+  domain: example.com
+  smtp_address: ""
+  smtp_port: 999
+  smtp_domain: ""
+  smtp_username: ""
+  smtp_password: ""

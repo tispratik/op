@@ -15,7 +15,18 @@ Rails::Initializer.run do |config|
   config.gem 'email_veracity'
   config.gem 'searchlogic'
 end
+
+ActionView::Base.sanitized_allowed_tags.delete 'div'
+
 require 'paperclip'
+
+# hack for using Time.zone.now instead of Time.now
+class Date
+  def self.today
+    current
+  end
+end
+
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS[:default] = "%B %d, %Y %H:%M"
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS[:default] = '%Y-%m-%d'
 

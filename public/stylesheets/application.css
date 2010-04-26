@@ -1,3 +1,330 @@
+form.formtastic ul, form.formtastic ol, form.formtastic legend, form.formtastic p {
+  margin: 0;
+  padding: 0; }
+form.formtastic li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+form.formtastic fieldset {
+  display: block;
+  *display: inline-block; }
+  form.formtastic fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic abbr, form.formtastic acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+form.formtastic ol, form.formtastic ul {
+  list-style: none; }
+form.formtastic label {
+  display: block;
+  *display: inline-block; }
+  form.formtastic label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic input, form.formtastic textarea {
+  vertical-align: middle; }
+form.formtastic .check_boxes input, form.formtastic .radio input {
+  margin: 0; }
+form.formtastic .check_boxes label, form.formtastic .radio label {
+  cursor: pointer; }
+form.formtastic .hidden {
+  display: none; }
+form.formtastic .date li, form.formtastic .time li, form.formtastic .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+form.formtastic .date label, form.formtastic .time label, form.formtastic .datetime label {
+  display: none;
+  width: auto; }
+form.formtastic .date input, form.formtastic .time input, form.formtastic .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+form.formtastic .errors {
+  list-style: square; }
+  form.formtastic .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+form.formtastic .inputs {
+  z-index: 99; }
+form.formtastic .buttons li {
+  float: left; }
+form.formtastic li {
+  *display: inline-block;
+  display: block; }
+  form.formtastic li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  form.formtastic li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  form.formtastic li legend {
+    display: block;
+    margin-bottom: 0; }
+  form.formtastic li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  form.formtastic li ol {
+    float: left;
+    margin: 0; }
+    form.formtastic li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+form.formtastic fieldset {
+  width: 100%; }
+form.formtastic label {
+  float: left;
+  width: 20%;
+  text-align: left;
+  padding-left: 0; }
+form.formtastic li ol {
+  padding: 0 10% 0 20%; }
+form.formtastic li fieldset legend, form.formtastic li fieldset legend .label {
+  display: block; }
+form.formtastic li fieldset legend {
+  width: 20%;
+  text-align: left;
+  display: inline;
+  float: left;
+  clear: none;
+  padding: 0;
+  width: 100%; }
+form.formtastic li fieldset .label {
+  position: absolute;
+  width: 20%;
+  top: 0px;
+  left: 0; }
+form.formtastic li fieldset label {
+  padding-left: 0; }
+form.formtastic li fieldset label, form.formtastic li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+form.formtastic li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+form.formtastic .inline-hints, form.formtastic .inline-errors, form.formtastic .errors {
+  margin: 0 0 0 20%; }
+form.formtastic input, form.formtastic textarea {
+  width: 70%; }
+form.formtastic select {
+  width: auto; }
+form.formtastic .checkbox li, form.formtastic .radio li {
+  display: block;
+  clear: both; }
+form.formtastic .checkbox input, form.formtastic .radio input {
+  border: none; }
+form.formtastic .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  form.formtastic .buttons input {
+    width: auto; }
+  form.formtastic .buttons li {
+    width: auto;
+    float: left;
+    display: inline; }
+form.formtastic #errorExplanation {
+  margin-left: 20%;
+  width: 70%; }
+form.formtastic li {
+  padding: 5px 0px; }
+form.formtastic li.boolean label {
+  padding-left: 20%;
+  width: 100%; }
+  form.formtastic li.boolean label input {
+    width: auto;
+    margin-right: 0.5em; }
+form.formtastic label {
+  line-height: 1.4em;
+  font-size: 13px; }
+form.formtastic label.error {
+  margin-left: 20%;
+  color: #f22; }
+form.formtastic p.inline-errors {
+  color: #f22; }
+form.formtastic p.inline-hints {
+  color: #777;
+  font-style: italic;
+  font-size: 11px; }
+form.formtastic .date legend label, form.formtastic .time legend label, form.formtastic .datetime legend label {
+  display: block !important; }
+form.formtastic.labels-within-fields label.error {
+  padding: 0;
+  margin: 0; }
+form.formtastic.stack ul, form.formtastic.stack ol, form.formtastic.stack legend, form.formtastic.stack p {
+  margin: 0;
+  padding: 0; }
+form.formtastic.stack li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+form.formtastic.stack fieldset {
+  display: block;
+  *display: inline-block; }
+  form.formtastic.stack fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic.stack abbr, form.formtastic.stack acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+form.formtastic.stack ol, form.formtastic.stack ul {
+  list-style: none; }
+form.formtastic.stack label {
+  display: block;
+  *display: inline-block; }
+  form.formtastic.stack label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic.stack input, form.formtastic.stack textarea {
+  vertical-align: middle; }
+form.formtastic.stack .check_boxes input, form.formtastic.stack .radio input {
+  margin: 0; }
+form.formtastic.stack .check_boxes label, form.formtastic.stack .radio label {
+  cursor: pointer; }
+form.formtastic.stack .hidden {
+  display: none; }
+form.formtastic.stack .date li, form.formtastic.stack .time li, form.formtastic.stack .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+form.formtastic.stack .date label, form.formtastic.stack .time label, form.formtastic.stack .datetime label {
+  display: none;
+  width: auto; }
+form.formtastic.stack .date input, form.formtastic.stack .time input, form.formtastic.stack .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+form.formtastic.stack .errors {
+  list-style: square; }
+  form.formtastic.stack .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+form.formtastic.stack .inputs {
+  z-index: 99; }
+form.formtastic.stack .buttons li {
+  float: left; }
+form.formtastic.stack li {
+  *display: inline-block;
+  display: block; }
+  form.formtastic.stack li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  form.formtastic.stack li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  form.formtastic.stack li legend {
+    display: block;
+    margin-bottom: 0; }
+  form.formtastic.stack li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  form.formtastic.stack li ol {
+    float: left;
+    margin: 0; }
+    form.formtastic.stack li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+form.formtastic.stack fieldset {
+  width: 100%; }
+form.formtastic.stack ol {
+  padding-left: 0; }
+form.formtastic.stack input {
+  clear: both;
+  float: none; }
+form.formtastic.stack li {
+  display: block;
+  clear: both;
+  float: none;
+  width: 100%; }
+  form.formtastic.stack li ol {
+    padding: 0; }
+  form.formtastic.stack li li {
+    clear: none;
+    width: auto; }
+  form.formtastic.stack li fieldset legend, form.formtastic.stack li fieldset legend .label {
+    display: block;
+    clear: both; }
+  form.formtastic.stack li fieldset .label {
+    position: relative; }
+  form.formtastic.stack li fieldset label, form.formtastic.stack li fieldset input {
+    width: auto; }
+form.formtastic.stack .date ol, form.formtastic.stack .time ol, form.formtastic.stack .datetime ol {
+  width: 100%; }
+form.formtastic.stack .date li, form.formtastic.stack .time li, form.formtastic.stack .datetime li {
+  display: inline;
+  clear: none;
+  float: left;
+  padding-right: 0; }
+form.formtastic.stack .checkbox li, form.formtastic.stack .radio li {
+  display: block; }
+form.formtastic.stack .checkbox input, form.formtastic.stack .radio input {
+  border: none; }
+form.formtastic.stack label {
+  display: block;
+  clear: both;
+  float: none;
+  width: 92%; }
+form.formtastic.stack input, form.formtastic.stack textarea {
+  width: 92%; }
+form.formtastic.stack select {
+  width: auto; }
+form.formtastic.stack .errors li {
+  display: list-item; }
+form.formtastic.stack .buttons ol {
+  padding-left: 0;
+  padding-right: 0; }
+form.formtastic.stack .buttons li {
+  float: left;
+  width: auto;
+  clear: none;
+  display: inline; }
+form.formtastic.stack .buttons input {
+  width: auto; }
+form.formtastic.stack #errorExplanation {
+  width: 100%; }
+form.formtastic.stack .label {
+  #left: -0.5em;
+  #position: relative; }
+form.formtastic.stack li.boolean label {
+  padding-left: 0; }
+
 html, body {
   margin: 0;
   padding: 0; }
@@ -159,7 +486,7 @@ h3 {
 .content_70 {
   width: 70%; }
 
-table td, table th {
+table.index td, table.index th {
   padding: 10px; }
 
 .even {
@@ -170,3 +497,39 @@ ins.diffmod, ins.diffins {
 
 del.diffmod, del.diffdel {
   background-color: #faa; }
+
+#comments .comment {
+  box-shadow: 0px 0px 4px #ccc;
+  -moz-box-shadow: 0px 0px 4px #ccc;
+  -webkit-box-shadow: 0px 0px 4px #ccc;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 1px; }
+  #comments .comment .comment-header {
+    cursor: pointer; }
+    #comments .comment .comment-header .user-image {
+      margin-right: 5px; }
+    #comments .comment .comment-header .user-image img {
+      width: 20px;
+      height: 20px; }
+    #comments .comment .comment-header .source {
+      color: #aaa; }
+    #comments .comment .comment-header .short-message {
+      color: #aaa; }
+
+#new_comment_form {
+  box-shadow: 0px 0px 4px #ccc;
+  -moz-box-shadow: 0px 0px 4px #ccc;
+  -webkit-box-shadow: 0px 0px 4px #ccc;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px; }
+  #new_comment_form #comment_message {
+    width: 95%;
+    height: 100px; }
+  #new_comment_form fieldset.buttons {
+    padding: 0; }
