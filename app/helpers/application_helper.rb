@@ -1,5 +1,27 @@
 module ApplicationHelper
   
+  def sort_link(title, column, options = {})
+    condition = options[:unless] if options.has_key?(:unless)
+    sort_dir = params[:d] == 'up' ? 'down' : 'up'
+    sort_dir_searchlogic = params[:d] == 'up' ? 'descend_by' : 'ascend_by'
+    arrow = ""
+    if  column.to_s.eql?(params[:c])
+      arrow = params[:d]== "down" ? "&#8595;" : "&#8593;" 
+    end
+    
+     (link_to_unless condition, title, request.parameters.merge( {:c => column, :d => sort_dir, :sort => sort_dir_searchlogic} )) + arrow 
+  end
+  
+  
+  def url_name(object, controller_name)
+    object.nil? ? "" : href_tag(url_only(object, controller_name), object.to_s)
+  end
+  
+  def url_only(object, controller_name)
+    return url_for(:controller => controller_name, :action => :show, :id => object.id) unless object.nil?
+  end
+  
+  
   def markdown(text)
     # text = sanitize(text, :tags => %w(object param embed))
     text.gsub!(/<script.*>.*<\/script>/, '')
