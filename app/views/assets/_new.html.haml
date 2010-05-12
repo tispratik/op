@@ -1,0 +1,11 @@
+%br
+- semantic_form_for @asset, :url => [@user, @asset], :html => {:multipart => true , :class => "stack"}, :live_validations => true do |f|
+  = error_messages_for :asset
+  - f.inputs do
+    - f.inputs :for => [:assets, @project.assets.build] do |a|
+      - a.inputs do
+        = a.hidden_field :attachable_id
+        = a.hidden_field :attachable_type
+        = a.input :data, :as => :file, :label => false, :input_html => {:size => 20}
+  %br      
+  = f.submit "Upload"

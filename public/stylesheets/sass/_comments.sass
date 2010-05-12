@@ -1,9 +1,9 @@
 #comments
   .comment
-    +box-shadow("0px 0px 4px #ccc")
+    +box-shadow("0px 0px 4px #F2F0F0")
     +border-radius("4px")
-    border: 1px solid #ccc
-    padding: 1px
+    border: 1px solid #F2F0F0
+    padding: 3px
     .comment-header
       cursor: pointer
       .user-image
@@ -17,12 +17,13 @@
         color: #aaa
         
 #new_comment_form
-  +box-shadow("0px 0px 4px #ccc")
-  +border-radius("4px")
-  border: 1px solid #ccc
-  padding: 10px
+  padding-top: 10px
   #comment_message
-    width: 95%
-    height: 100px
+    width: 99%
+    height: 90px
   fieldset.buttons
     padding: 0
+  form#new_comment.loading
+    li.commit
+      padding-right: 25px
+      background: url("../images/spinner.gif") right center no-repeat

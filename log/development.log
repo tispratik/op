@@ -5809,3 +5809,522 @@ Rendering template within layouts/application
 Rendering user_sessions/new
 Rendered layouts/_header (0.0ms)
 Completed in 82ms (View: 15, DB: 1) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 24.171.23.184 at 2010-04-26 07:07:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 75ms (View: 12, DB: 1) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 24.171.23.184 at 2010-04-26 07:07:01) [GET]
+Redirected to http://pratik.homedns.org:3001/sign_in
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#new (for 24.171.23.184 at 2010-04-26 07:07:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_header (0.0ms)
+Completed in 220ms (View: 21, DB: 0) | 200 OK [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UserSessionsController#create (for 24.171.23.184 at 2010-04-26 07:07:12) [POST]
+  Parameters: {"commit"=>"Sign in", "user_session"=>{"username"=>"dummy", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"lUQCCrKdq31S0lvh3ujf5+l9ulkBfMaIuIrw1b+gh3k=", "controller"=>"user_sessions"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+SQL (1.0ms)  BEGIN
+User Update (1.0ms)  UPDATE `users` SET `updated_at` = '2010-04-26 12:07:12', `perishable_token` = 'wyry6EW7i1Sd8Hbeub6l' WHERE `id` = 1
+SQL (1.0ms)  COMMIT
+Redirected to http://pratik.homedns.org:3001/
+Completed in 77ms (DB: 0) | 302 Found [http://pratik.homedns.org/sign_in]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 24.171.23.184 at 2010-04-26 07:07:12) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 177ms (View: 26, DB: 9) | 200 OK [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 24.171.23.184 at 2010-04-26 07:07:13) [GET]
+Redirected to http://pratik.homedns.org:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 24.171.23.184 at 2010-04-26 07:07:13) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 213ms (View: 36, DB: 7) | 200 OK [http://pratik.homedns.org/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing RegistrationsController#edit (for 24.171.23.184 at 2010-04-26 07:16:33) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"registrations"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering registrations/edit
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (2.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Completed in 303ms (View: 87, DB: 8) | 200 OK [http://pratik.homedns.org/users/edit]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 24.171.23.184 at 2010-04-26 07:16:34) [GET]
+Redirected to http://pratik.homedns.org:3001/users/edit
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing RegistrationsController#edit (for 24.171.23.184 at 2010-04-26 07:16:34) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"registrations"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering registrations/edit
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (8.0ms)
+Completed in 518ms (View: 273, DB: 8) | 200 OK [http://pratik.homedns.org/users/edit]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:49:26) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (28.0ms)
+Rendered layouts/_logo_box (3.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_old_browser (3.0ms)
+Completed in 799ms (View: 91, DB: 9) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:49:27) [GET]
+Redirected to http://localhost:3001/
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:49:28) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (11.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (6.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (33.0ms)
+Rendered layouts/_logo_box (2.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 329ms (View: 67, DB: 12) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:49:31) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (6.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (3.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (35.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (7.0ms)
+Rendered layouts/_old_browser (1.0ms)
+Completed in 416ms (View: 72, DB: 9) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:49:32) [GET]
+Redirected to http://localhost:3001/
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:49:32) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (27.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (4.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 245ms (View: 43, DB: 12) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-11 22:49:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"dummy", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (29.0ms)
+Rendered layouts/_logo_box (2.0ms)
+CACHE (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 342ms (View: 49, DB: 11) | 200 OK [http://localhost/users/dummy]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:49:35) [GET]
+Redirected to http://localhost:3001/
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:49:35) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (0.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (3.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (0.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (21.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (2.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 210ms (View: 35, DB: 10) | 200 OK [http://localhost/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:56:45) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (25.0ms)
+Rendered layouts/_logo_box (3.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_old_browser (3.0ms)
+Completed in 345ms (View: 85, DB: 10) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:56:47) [GET]
+Redirected to http://localhost:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:56:48) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (9.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (5.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (2.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (25.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 244ms (View: 44, DB: 9) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:56:50) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (0.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (26.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (5.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 236ms (View: 42, DB: 10) | 200 OK [http://localhost/]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:56:52) [GET]
+Redirected to http://localhost:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:56:53) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (4.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (3.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (28.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (4.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 242ms (View: 44, DB: 9) | 200 OK [http://localhost/]
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-11 22:56:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"dummy", "controller"=>"users"}
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (5.0ms)  SHOW FIELDS FROM `ucontacts`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`username` = 'dummy') LIMIT 1
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (29.0ms)
+Rendered layouts/_logo_box (2.0ms)
+CACHE (0.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (6.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 266ms (View: 50, DB: 10) | 200 OK [http://localhost/users/dummy]
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-11 22:56:58) [GET]
+Redirected to http://localhost:3001/
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (0.0ms)  SET SQL_AUTO_IS_NULL=0
+
+
+Processing UsersController#me (for 127.0.0.1 at 2010-05-11 22:56:59) [GET]
+  Parameters: {"action"=>"me", "controller"=>"users"}
+SQL (1.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+User Columns (5.0ms)  SHOW FIELDS FROM `users`
+User Load (1.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1
+SQL (0.0ms)  SET NAMES 'utf8'
+SQL (1.0ms)  SET SQL_AUTO_IS_NULL=0
+Decode Load (1.0ms)  SELECT * FROM `decodes` ORDER BY sort_order
+Decode Columns (4.0ms)  SHOW FIELDS FROM `decodes`
+Decode Load (1.0ms)  SELECT * FROM `decodes` WHERE (`decodes`.`name` = 'OP_Phone_Type') ORDER BY sort_order
+Ucontact Load (1.0ms)  SELECT * FROM `ucontacts` WHERE (`ucontacts`.user_id = 1) LIMIT 1
+Ucontact Columns (4.0ms)  SHOW FIELDS FROM `ucontacts`
+Rendering template within layouts/application
+Rendering users/show
+Usr Load (1.0ms)  SELECT * FROM `usrs` WHERE (`usrs`.user_id = 1) LIMIT 1
+Usr Columns (4.0ms)  SHOW FIELDS FROM `usrs`
+Rendered layouts/_top_bar (33.0ms)
+Rendered layouts/_logo_box (1.0ms)
+User Load (0.0ms)  SELECT * FROM `users` WHERE (`users`.`id` = 1) 
+Rendered layouts/_header (3.0ms)
+Rendered layouts/_old_browser (0.0ms)
+Completed in 244ms (View: 51, DB: 10) | 200 OK [http://localhost/]

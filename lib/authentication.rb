@@ -32,7 +32,9 @@ module Authentication
   
   def login_required
     unless logged_in?
-      flash[:error] = "You must first log in or sign up before accessing this page."
+      unless controller_name == "users" && action_name == "me"
+        flash[:error] = "You must first log in or sign up before accessing this page."
+      end
       store_target_location
       redirect_to new_user_session_path
     end
@@ -46,7 +48,7 @@ module Authentication
   private
   
   def store_target_location
-    if (request.request_uri <=> session[:return_to]) != 0
+    if (request.request_uri <=> session[:return_to]) == 0
       session[:return_to] = request.request_uri
     end
   end

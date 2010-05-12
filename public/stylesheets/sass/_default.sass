@@ -11,7 +11,6 @@ html, body
   margin: 0
   padding: 0
 
-
 body
   background-color: #eee
   font-family: 'Lucida Grande', Verdana, Arial, Tahoma, Helvetica
@@ -20,17 +19,15 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: normal
   color: #111
+  margin: 0.2em 0em
 h1
   font-size: 2em
   line-height: 1
-  margin-bottom: 0.5em
 h2
   font-size: 1.5em
-  margin-bottom: 0.75em
 h3
   font-size: 1em
   line-height: 1
-  margin-bottom: 1em
 
 #flash_messages
   .flash
@@ -65,24 +62,20 @@ h3
       margin: 8px
 
 #container
-  margin: 10px 20px
+  margin: 6px 20px
 
 #header
   margin-bottom: 10px
   text-align: right
   a
-    padding: 2px 8px
-  .links
-    a.orange
-      background-color: #FFFED1
-      color: black
-      text-decoration: none
-      font-size: 1.1em
-      border-color: #D1D1CD
-      border-style: solid
-      border-width: 2px
-  .status
-    margin-left: 20px
+    padding: 2px 20px
+    font-size: 0.9em
+    text-decoration: none
+  a.orange
+    background-color: #00800B
+    color: white
+    +box-shadow("0px 0px 5px #27272B")
+    +border-radius("2px")
   
 #sidebar
   width: 20%
@@ -121,12 +114,13 @@ h3
         font-weight: bold
         color: #FF5900
 
-      
 #content
   width: 76%
   float: right
   padding: 10px 2%
   background-color: #fff
+  +box-shadow("0px 0px 6px #A8A6A0")
+  +border-radius("4px")
   h1
     text-align: center
     padding: 10px 30px 10px 30px
@@ -155,7 +149,6 @@ h3
 .red
   color: #faa
 
-
 .content_20
   width: 20%
 .content_80
@@ -163,14 +156,66 @@ h3
 .content_70
   width: 70%
 
+small_text
+  font-size: 0.8em
+
 table.index
   td, th
-    padding: 10px
-
+    padding: 5px 10px 0px 5px
+    text-align: left
+  tr.header
+    background-color: #DAE0E0
+    heigth: 30px
+    color: #221C26
+  tr.header a:hover
+    background-color: white
+  tr.header a
+    background: url(../images/nav-arrow-down-open1.png) no-repeat right
+    color: #221C26
+    padding-right: 15px
+    text-decoration: none
+  
+  td.min200
+    width: 200px
+  td.min600
+    width: 600px
+  td.right
+    text-align:right
+  td.top
+    vertical-align: top
+  
 .even
-  background-color: #F0F8FF
+  background-color: #F5FEFF
 
 ins.diffmod, ins.diffins
   background-color: #dfd
 del.diffmod, del.diffdel
   background-color: #faa
+
+.pagination
+  padding: 3px
+  margin: 3px
+  a
+    padding: 2px 5px 2px 5px
+    margin: 2px
+    // border: 1px solid #aaaadd
+    text-decoration: none
+    color: #000099
+  a.hover
+    // border: 1px solid #000099
+    color: #000
+  a.active
+    // border: 1px solid #000099
+    color: #000  
+  span.current    
+    padding: 2px 5px 2px 5px
+    margin: 2px
+    // border: 1px solid #000099
+    font-weight: bold
+    background-color: #cc3700
+    color: #FFF
+  span.disabled     
+    padding: 2px 5px 2px 5px
+    margin: 2px
+    // border: 1px solid #eee
+    color: #ddd

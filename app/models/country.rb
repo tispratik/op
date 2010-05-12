@@ -6,6 +6,10 @@ class Country < ActiveRecord::Base
   has_many :regions
   has_many :cities
   
+  def get_flag
+    "flags/small/" + iso2.downcase + ".gif"
+  end
+  
   def self.get_flag(iso2)
     iso2 = iso2.downcase
     "flags/small/" + iso2 + ".gif"

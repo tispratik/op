@@ -1,3 +1,7 @@
+#flash_messages
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :class => "flash #{name}" if msg.is_a?(String)
+        
 - if @user && !@user.new_record?
   %h1
     = @user

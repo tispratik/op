@@ -1,0 +1,8 @@
+- semantic_form_for comment do |f|
+  = error_messages_for :comment
+  = f.hidden_field :commentable_id
+  = f.hidden_field :commentable_type
+  = f.hidden_field :parent_id
+  = f.input :message, :label => false
+  - f.buttons do
+    = f.commit_button "Post Comment"

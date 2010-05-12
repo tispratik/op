@@ -10,20 +10,20 @@ ActionController::Routing::Routes.draw do |map|
     session.destroy_user_session "sign_out", :action => :destroy, :conditions => {:method => :get}
   end
   
-  map.resources :users do |users|
-    map.resources :usrs
-    map.resources :usocials
-    map.resources :interests
-    map.resources :educations
-    map.resources :workpositions
-    map.resources :ucontacts
-    map.resources :uprofiles
+  map.resources :users do |u|
+    u.resources :usrs
+    u.resources :usocials
+    u.resources :interests
+    u.resources :educations
+    u.resources :workpositions
+    u.resources :ucontacts
+    u.resources :uprofiles
+    u.resources :assets
+    u.connect '/assets/:id/:style', :controller => 'assets', :action => 'show', :conditions => {:method => :get}
   end
   
-  map.resources :assets, :only => [:destroy]
-  map.connect '/assets/:id/:style', :controller => 'assets', :action => 'show', :conditions => {:method => :get}
   map.connect "live_validations/:action", :controller => "live_validations"
-  
+  map.resources :comments, :member => {:quote => :get}
   map.root :controller => :users, :action => :me
   
 end

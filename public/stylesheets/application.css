@@ -149,8 +149,7 @@ form.formtastic #errorExplanation {
 form.formtastic li {
   padding: 5px 0px; }
 form.formtastic li.boolean label {
-  padding-left: 20%;
-  width: 100%; }
+  padding-left: 20%; }
   form.formtastic li.boolean label input {
     width: auto;
     margin-right: 0.5em; }
@@ -322,6 +321,8 @@ form.formtastic.stack #errorExplanation {
 form.formtastic.stack .label {
   #left: -0.5em;
   #position: relative; }
+form.formtastic.stack .buttons {
+  padding-left: 0; }
 form.formtastic.stack li.boolean label {
   padding-left: 0; }
 
@@ -336,21 +337,19 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  color: #111; }
+  color: #111;
+  margin: 0.2em 0em; }
 
 h1 {
   font-size: 2em;
-  line-height: 1;
-  margin-bottom: 0.5em; }
+  line-height: 1; }
 
 h2 {
-  font-size: 1.5em;
-  margin-bottom: 0.75em; }
+  font-size: 1.5em; }
 
 h3 {
   font-size: 1em;
-  line-height: 1;
-  margin-bottom: 1em; }
+  line-height: 1; }
 
 #flash_messages .flash {
   padding: 5px 8px;
@@ -387,23 +386,24 @@ h3 {
       margin: 8px; }
 
 #container {
-  margin: 10px 20px; }
+  margin: 6px 20px; }
 
 #header {
   margin-bottom: 10px;
   text-align: right; }
   #header a {
-    padding: 2px 8px; }
-  #header .links a.orange {
-    background-color: #FFFED1;
-    color: black;
-    text-decoration: none;
-    font-size: 1.1em;
-    border-color: #D1D1CD;
-    border-style: solid;
-    border-width: 2px; }
-  #header .status {
-    margin-left: 20px; }
+    padding: 2px 20px;
+    font-size: 0.9em;
+    text-decoration: none; }
+  #header a.orange {
+    background-color: #00800B;
+    color: white;
+    box-shadow: 0px 0px 5px #27272B;
+    -moz-box-shadow: 0px 0px 5px #27272B;
+    -webkit-box-shadow: 0px 0px 5px #27272B;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px; }
 
 #sidebar {
   width: 20%; }
@@ -445,7 +445,13 @@ h3 {
   width: 76%;
   float: right;
   padding: 10px 2%;
-  background-color: #fff; }
+  background-color: #fff;
+  box-shadow: 0px 0px 6px #A8A6A0;
+  -moz-box-shadow: 0px 0px 6px #A8A6A0;
+  -webkit-box-shadow: 0px 0px 6px #A8A6A0;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
   #content h1 {
     text-align: center;
     padding: 10px 30px 10px 30px;
@@ -486,11 +492,32 @@ h3 {
 .content_70 {
   width: 70%; }
 
+small_text {
+  font-size: 0.8em; }
+
 table.index td, table.index th {
-  padding: 10px; }
+  padding: 5px 10px 0px 5px;
+  text-align: left; }
+table.index tr.header {
+  background-color: #DAE0E0;
+  heigth: 30px;
+  color: #221C26; }
+table.index tr.header a:hover {
+  background-color: white; }
+table.index tr.header a {
+  background: url(../images/nav-arrow-down-open1.png) no-repeat right;
+  color: #221C26;
+  padding-right: 15px;
+  text-decoration: none; }
+table.index td.min200 {
+  width: 200px; }
+table.index td.min600 {
+  width: 600px; }
+table.index td.top {
+  vertical-align: top; }
 
 .even {
-  background-color: #F0F8FF; }
+  background-color: #F5FEFF; }
 
 ins.diffmod, ins.diffins {
   background-color: #dfd; }
@@ -498,15 +525,38 @@ ins.diffmod, ins.diffins {
 del.diffmod, del.diffdel {
   background-color: #faa; }
 
+.pagination {
+  padding: 3px;
+  margin: 3px; }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    text-decoration: none;
+    color: #000099; }
+  .pagination a.hover {
+    color: #000; }
+  .pagination a.active {
+    color: #000; }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    font-weight: bold;
+    background-color: #cc3700;
+    color: #FFF; }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    color: #ddd; }
+
 #comments .comment {
-  box-shadow: 0px 0px 4px #ccc;
-  -moz-box-shadow: 0px 0px 4px #ccc;
-  -webkit-box-shadow: 0px 0px 4px #ccc;
+  box-shadow: 0px 0px 4px #F2F0F0;
+  -moz-box-shadow: 0px 0px 4px #F2F0F0;
+  -webkit-box-shadow: 0px 0px 4px #F2F0F0;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  border: 1px solid #ccc;
-  padding: 1px; }
+  border: 1px solid #F2F0F0;
+  padding: 3px; }
   #comments .comment .comment-header {
     cursor: pointer; }
     #comments .comment .comment-header .user-image {
@@ -520,16 +570,73 @@ del.diffmod, del.diffdel {
       color: #aaa; }
 
 #new_comment_form {
-  box-shadow: 0px 0px 4px #ccc;
-  -moz-box-shadow: 0px 0px 4px #ccc;
-  -webkit-box-shadow: 0px 0px 4px #ccc;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border: 1px solid #ccc;
-  padding: 10px; }
+  padding-top: 10px; }
   #new_comment_form #comment_message {
-    width: 95%;
-    height: 100px; }
+    width: 99%;
+    height: 90px; }
   #new_comment_form fieldset.buttons {
     padding: 0; }
+  #new_comment_form form#new_comment.loading li.commit {
+    padding-right: 25px;
+    background: url("../images/spinner.gif") right center no-repeat; }
+
+span.match {
+  background-color: #ffa; }
+
+#articles .container {
+  padding-bottom: 10px; }
+#articles .source {
+  background-color: #F7F7F7;
+  color: #8F898A;
+  padding-bottom: 1px;
+  margin-top: 10px;
+  font-size: 1em; }
+#articles .article {
+  padding: 2px; }
+  #articles .article > .left {
+    width: 70%; }
+  #articles .article .author {
+    margin-right: 10px; }
+    #articles .article .author img {
+      width: 20px;
+      height: 20px; }
+  #articles .article .title {
+    font-size: 1em;
+    padding-left: 10px; }
+    #articles .article .title .type {
+      color: #aaa; }
+  #articles .article .right {
+    color: #575455;
+    font-size: 1em;
+    text-align: right; }
+  #articles .article .content {
+    padding: 10px; }
+
+.tags #article_tag_list {
+  width: 60%; }
+
+#search_form {
+  padding-left: 100px;
+  margin-bottom: 10px; }
+  #search_form #advanced_search input[type=text] {
+    width: 60%; }
+  #search_form #advanced_search input[type=text]#search_citation_date {
+    width: 100px; }
+
+#search_form.loading {
+  background: url("../images/spinner.gif") left top no-repeat; }
+
+#attachments .attachment {
+  border: 2px solid #eee;
+  margin: 5px 0px;
+  padding: 5px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+#calendar.loading {
+  background: url("../images/spinner.gif") left top no-repeat; }
+
+#calendar {
+  margin-top: 5px;
+  padding-top: 10px; }

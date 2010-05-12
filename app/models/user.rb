@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
     Thread.current[:curr_user] = user
   end
   
+  def self.cid
+    curr_user.id
+  end
+  
 end
