@@ -36,7 +36,7 @@ Ucontact.blueprint do
   webpage2_type  { a_web_page_type.rand }
   webpage3_type  { a_web_page_type.rand }
   short_description      { Populator.words(10..50) }
-  time_zone      { Time.random.zone }
+  time_zone      { ActiveSupport::TimeZone.all.rand.name }
   is_address_public   { Random.boolean }
 end
 

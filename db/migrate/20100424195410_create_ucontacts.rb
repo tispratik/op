@@ -2,7 +2,7 @@ class CreateUcontacts < ActiveRecord::Migration
   def self.up
     create_table :ucontacts do |t|
       t.integer :user_id
-      t.string :country_id
+      t.integer :country_id
       t.string :state
       t.string :city
       t.string :street1
