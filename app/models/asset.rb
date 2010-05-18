@@ -18,6 +18,7 @@ class Asset < ActiveRecord::Base
       
   validates_attachment_presence :data
   validates_attachment_size :data, :less_than => 10.megabytes
+  validates_attachment_content_type :data, :content_type => [/^(?!application\/octet-stream)/]
   
   attr_protected :data_file_name, :data_content_type, :data_file_size, :orig_name
   before_post_process :image?

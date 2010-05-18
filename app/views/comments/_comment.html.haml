@@ -2,7 +2,7 @@
   .comment-header
     .left
       .user-image.left
-        %img{:src => "/images/rails.png"}
+        = image_tag 'rails.png'
       = link_to comment.creator, comment.creator
       %span.source
         (#{h comment.source})
@@ -15,7 +15,7 @@
     .clear
   .comment-body
     .message
-      =simple_format comment.message
+      =sanitize simple_format(comment.message)
     %br
     %p
       = link_to "Quote", quote_comment_path(comment), :class => :quote

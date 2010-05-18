@@ -21,6 +21,29 @@ module ApplicationHelper
     return url_for(:controller => controller_name, :action => :show, :id => object.id) unless object.nil?
   end
   
+  def smart_date(i)
+    return "" if i.blank?
+    i.year == Time.now.year ? i.strftime("%d-%b") : i.strftime("%d-%b-%Y")
+  end
+  
+  def smart_due_date(i)
+    if i == nil
+      return ""
+    end
+    if Date.today == i
+      return "<span style=\"background-color:#F7FAB9;padding:0px 2px 0px 2px;\">Today</span>"
+    end  
+    if i-(Date.today) == 1
+      return "<span style=\"background-color:#F7FAB9;padding:0px 2px 0px 2px;\">Tomorrow</span>"
+    end  
+    if Date.today-(i) > 0.9
+      return "<span style=\"background-color:#FFC7C7;padding:0px 2px 0px 2px;\">" +  smart_date(i) + "</span>"
+    end
+    if Date.today-(i) < 1
+      return "<span style=\"background-color:#D2FFCC;padding:0px 2px 0px 2px;\">" +  smart_date(i) + "</span>"
+    end
+    return smart_date(i)
+  end
   
   def markdown(text)
     # text = sanitize(text, :tags => %w(object param embed))
@@ -69,6 +92,57 @@ module ApplicationHelper
       eos
     end
     str
+  end
+  
+  #  def filter_html(filter_name)
+  #    filter_list = Filter.filter_name_eq(filter_name)
+  #    return "" if filter_list.blank?
+  #    
+  #    str = "<table>" + "<tr>"
+  #    
+  #    param_internal_name = ""
+  #    
+  #    filter_list.each do |filter_name|
+  #      str = str + "<td>"
+  #      str = str + "<div id=\"bold_text\">" + filter_name.display_name + "</div>"
+  #      filter_name.get_params.each do |param|
+  #        checked = ""
+  #        if params[param.internal_param] == param.internal_value
+  #          checked = "checked"
+  #        end
+  #        str = str + "<input type=radio name=" + param.internal_param + " value= '" + param.internal_value + "' " + checked + ">" + param.disp_value + "</input><br>"
+  #        param_internal_name = param.internal_param
+  #      end
+  #      str = str + "<input type=radio name=" + param_internal_name + " value="+ Decode::ANY + ">Any</input><br>"
+  #      str = str + "</td>"
+  #    end
+  #    str = str + "<td><input type='submit' value='Apply Filter'></td>"
+  #    str = str + "</tr>" + "</table>"
+  #    return str
+  #  end
+  
+  def filter_html(filter_name)
+    filter_list = Filter.filter_name_eq(filter_name)
+    return "" if filter_list.blank?
+    
+    str =  ""
+    param_internal_name = ""
+    
+    filter_list.each do |filter_name|
+      str = str + "<div id=\"bold_text\">" + filter_name.display_name + "</div>"
+      filter_name.get_params.each do |param|
+        checked = ""
+        if params[param.internal_param] == param.internal_value
+          checked = "checked"
+        end
+        str = str + "<input type=radio name=" + param.internal_param + " value= '" + param.internal_value + "' " + checked + ">" + param.disp_value + "</input><br>"
+        param_internal_name = param.internal_param
+      end
+      str = str + "<input type=radio name=" + param_internal_name + " value="+ Decode::ANY + ">Any</input><br>"
+      str = str + "<br />"
+    end
+    str = str + "<input type='submit' value='Apply Filter'>"
+    return str
   end
   
 end

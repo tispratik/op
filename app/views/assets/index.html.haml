@@ -1,12 +1,12 @@
 - if logged_in?
   - content_for :sidebar do
-    %h1 Add File
+    %h1 Upload a file
     = render :partial => "new"
     
 - form_tag '/assets', :method => :get do
   - if @assets.empty?
     %b
-      No files yet !
+      No files yet in this project !
   - else
     %table.index
       %tr.header
