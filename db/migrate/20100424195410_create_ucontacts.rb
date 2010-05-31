@@ -11,10 +11,9 @@ class CreateUcontacts < ActiveRecord::Migration
       t.string :is_address_public
       t.string :telnum1
       t.integer :telnum1_type
-      t.boolean :is_telnum1_public
-      t.string :telnum2
-      t.integer :telnum2_type
-      t.boolean :is_telnum2_public
+      t.boolean :is_contact_public
+      t.integer :mobile
+      t.references :carrier
       t.string :webpage1
       t.integer :webpage1_type
       t.string :webpage2
@@ -23,7 +22,6 @@ class CreateUcontacts < ActiveRecord::Migration
       t.integer :webpage3_type
       t.string :time_zone
       t.string :short_description
-      
       t.timestamps
     end
   end

@@ -28,9 +28,11 @@ jQuery.fn.labelsWithinFields = function(){
         $(this).focus(function(){
             $(this).prev('label').hide();
         }).blur(function(){
-            if (this.value == "") {
-                $(this).prev('label').show();
-            }
+            setTimeout(function(self) {
+              if (self.value == "") {
+                  $(self).prev('label').show();
+              }
+            }, 100, this)
         })
         if (this.value != "") {
             $(this).prev('label').hide();
@@ -40,6 +42,7 @@ jQuery.fn.labelsWithinFields = function(){
 
 $(document).ready(function(){
     $('.colorbox').colorbox();
+    $('input.datepicker').datepicker();
     
     $('#comments .comment a.quote').live('click', function(){
         $.get($(this).attr('href'), {}, null, 'script');

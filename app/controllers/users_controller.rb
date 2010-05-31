@@ -12,16 +12,16 @@ class UsersController < ApplicationController
     render :show
   end
   
-  def index
-    @users = eval(get_query)
-  end
-    
-  private
-  
-  def get_query
-    qry = "@project.users"
-    qry = qry + sort_order('ascend_by_username') 
-    qry = qry + ".paginate(:page => #{params[:page] || 1}, :per_page => 8)"
-  end
+  #  def index
+  #    @users = eval(get_query)
+  #  end
+  #    
+  #  private
+  #  
+  #  def get_query
+  #    qry = "@project.users"
+  #    qry = qry + sort_order('ascend_by_username') 
+  #    qry = qry + ".paginate(:page => #{params[:page] || 1}, :per_page => 8)"
+  #  end
   
 end

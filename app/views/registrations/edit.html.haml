@@ -1,6 +1,5 @@
 :javascript
   $(document).ready(function() {
-    /*
     $('#user_ucontact_attributes_country_id').change(function() {
       $.get("#{regions_registration_path}", {country_id: this.value}, function(data) {
         $('#user_ucontact_attributes_region_id').html(data)
@@ -11,42 +10,77 @@
         $('#user_ucontact_attributes_city_id').html(data)
       })
     })
-    */
-    
-    $("#user_login_email").rules("add", {
-      required: true, email: true
-    })
-    $('#user_password_confirmation').rules("remove", "required")
   })
-  
-%h1
-  Edit Profile
-  
+   
 - semantic_form_for @user, :url => registration_path, :live_validations => true do |f|
-
-  - f.inputs :name => "Login Information" do
-    = f.input :username
-    = f.input :login_email
-    = f.input :password
-    = f.input :password_confirmation
-
-  - f.inputs :name => "Account Information", :for => :usr do |uf|
-    = uf.input :first_name
-    = uf.input :last_name
-    = uf.input :one_line_bio
-    
-  - f.inputs :name => "Contact Information", :for => :ucontact do |cf|
-    = cf.input :country
-    = cf.input :city
-    = cf.input :state
-    = cf.input :street1
-    = cf.input :street2
-    = cf.input :zip
-    = cf.input :telnum1
-    = cf.input :telnum1_type, :as => :select, :collection => Ucontact::OP_PHONE_TYPES, :prompt => false
-    = cf.input :telnum2
-    = cf.input :telnum2_type, :as => :select, :collection => Ucontact::OP_PHONE_TYPES, :prompt => false
-    = cf.input :webpage1
-    = cf.input :time_zone, :as => :time_zone
-      
+  - f.inputs :for => @user.usr do |uf|
+    #projectbox  
+      #gray
+        %h2 &nbsp;&nbsp; Personal Details
+      %br
+      = uf.input :first_name
+      = uf.input :last_name
+      = uf.input :one_line_bio
+  - f.inputs :for => @user.ucontact do |cf|
+    #projectbox
+      #gray
+        %h2 
+          &nbsp;&nbsp; Location
+          .right
+            %small_text
+              Visible?
+            = cf.check_box :is_address_public
+      %br
+      = cf.input :street1
+      = cf.input :street2
+      = cf.input :country
+      = cf.input :city
+      = cf.input :state
+      = cf.input :zip
+      = cf.input :time_zone, :as => :time_zone
+    #projectbox
+      #gray
+        %h2 
+          &nbsp;&nbsp; Contact
+          .right
+            %small_text
+              Visible?
+            = cf.check_box :is_contact_public
+      %br
+      Cellphone Number
+      %br
+      = cf.text_field :mobile, :input_html => { :size => 10 }
+      - if @user.ucontact.is_sms_support_avail?
+        = cf.collection_select :carrier, @user.ucontact.getcarriers, :id, :display_text, { :include_blank => true, :prompt => true }
+      %br
+      - if @user.ucontact.is_sms_support_avail?
+        .gray
+          %i
+            To enable SMS alerts, please select an appropriate mobile carrier. 
+            %br
+            If your mobile carrier is not supported, please select blank and contact us at contact@viridian.in to get it enabled.
+        %br 
+      - else
+        .gray
+          Sorry SMS alerts are not available in your country. Need SMS in your country? Contact us at contact@viridian.in
+          %br
+      Other telephone number
+      %br
+      = cf.text_field :telnum1, :input_html => { :size => 10 }
+      = cf.collection_select :webpage1_type, Ucontact::OP_PHONE_TYPES, :id, :display_value, :include_blank => false
+    #projectbox
+      #gray
+        %h2 &nbsp;&nbsp; Online Presence
+      .gray
+        %i
+          Share any public websites do you have.
+      %br
+      = cf.text_field :webpage1, :input_html => { :size => 10 }
+      = cf.collection_select :webpage1_type, Ucontact::OP_WEBSITE_TYPE, :id, :display_value, :include_blank => false
+      %br
+      = cf.text_field :webpage2, :input_html => { :size => 10 }
+      = cf.collection_select :webpage2_type, Ucontact::OP_WEBSITE_TYPE, :id, :display_value, :include_blank => false
+      %br
+      = cf.text_field :webpage3, :input_html => { :size => 10 }
+      = cf.collection_select :webpage3_type, Ucontact::OP_WEBSITE_TYPE, :id, :display_value, :include_blank => false
   = f.buttons

@@ -13,17 +13,15 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |u|
     u.resources :usrs
     u.resources :usocials
-    u.resources :interests
-    u.resources :educations
-    u.resources :workpositions
     u.resources :ucontacts
-    u.resources :uprofiles
     u.resources :assets
     u.connect '/assets/:id/:style', :controller => 'assets', :action => 'show', :conditions => {:method => :get}
   end
   
   map.connect "live_validations/:action", :controller => "live_validations"
   map.resources :comments, :member => {:quote => :get}
-  map.root :controller => :users, :action => :me
+  map.root :controller => :registrations, :action => :edit
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
   
 end

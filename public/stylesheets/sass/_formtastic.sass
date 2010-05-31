@@ -24,6 +24,10 @@ form.formtastic
       label
         display: block !important
   
+  &.loading
+    li.commit
+      padding-right: 25px
+      background: url("../images/spinner.gif") right center no-repeat
   &.labels-within-fields
     label.error
       :padding 0
@@ -31,6 +35,29 @@ form.formtastic
   &.stack
     +stack-form(100%, 92%)
     .buttons
-      padding-left: 0
+      :padding-left 0
     li.boolean label
       :padding-left 0
+  &.inline
+    li
+      float: left
+    input
+      width: auto
+    fieldset
+      width: auto
+      &.inputs
+        label
+          width: auto
+        li
+          margin-right: 10px
+        float: left
+      &.buttons
+        display: inline
+        padding: 0
+        li
+          margin-right: 10px
+    label.error
+      margin: 0
+      float: none
+      width: auto
+    

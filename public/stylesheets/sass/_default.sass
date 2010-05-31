@@ -36,14 +36,34 @@ h3
 .gray
   color: gray
 
+span.lightgray
+  color: #CCCCC8
+
 span.bottom
   vertical-align: text-bottom
 
+span.filetag
+  padding: 0px 21px 0px 2px
+  background-color: #F5F5DC
+  color: #454542
+  
+span.tasktag
+  padding: 0px 15px 0px 2px
+  background-color: #EBE1E2
+  color: #757575
+  
+span.feedtag
+  padding: 0px 2px 0px 2px
+  background-color: #DEDEE0
+  color: #757575
+  
+span.coedittag
+  padding: 0px 3px 0px 2px
+  background-color: #E1EBE2
+  color: #757575
+
 span.gray
   color: gray
-
-span.lightgray
-  color: #D4D6D5
 
 #flash_messages
   .flash
@@ -88,10 +108,11 @@ span.lightgray
     font-size: 0.9em
     text-decoration: none
   a.orange
-    background-color: #357328
-    color: white
-    +box-shadow("0px 0px 5px #27272B")
+    background-color: #FFEC6E
+    color: black
+    +box-shadow("0px 0px 5px #C9C873")
     +border-radius("2px")
+    font-size: 1em
   
 #sidebar
   width: 20%
@@ -129,20 +150,33 @@ span.lightgray
         text-decoration: none
         font-weight: bold
         color: #FF5900
+  form
+    input[type=text]
+      height: 18px
+    input[type=text], textarea
+      border: 1px solid #aaa
+
+#op
+  form
+    input[type=text]
+      height: 18px
+      width: 20
+    input[type=text], textarea
+      border: 1px solid #aaa
 
 #content
   width: 76%
   float: right
   padding: 10px 2%
-  background-color: #fff
+  background-color: white
   +box-shadow("0px 0px 6px #A8A6A0")
   +border-radius("4px")
   h1
+    background-color: #D0E4F5
+    color: #787D7B
     text-align: center
-    padding: 10px 30px 10px 30px
-    background-color: #eee
-    color: #D97D04
-    font-style: italic
+    padding: 15px
+    line-height: 1
   .menu
     a
       padding: 2px 10px 2px 10px
@@ -182,7 +216,7 @@ table.index
     padding: 5px 10px 0px 5px
     text-align: left
   tr.header
-    background-color: #FFF5F5
+    background-color: #EDEDED
     heigth: 30px
     color: #221C26
   tr.header a:hover
@@ -192,18 +226,31 @@ table.index
     color: #221C26
     padding-right: 15px
     text-decoration: none
+  td.none
+    padding: 0px 0px 0px 0px
   
   td.min200
     width: 200px
+  td.min100
+    width: 100px
   td.min350
     width: 350px
+  td.min400
+    width: 400px
   td.min600
     width: 600px
+  td.min500
+    width: 500px
   td.right
     text-align:right
   td.top
+    vertical-align: top  
+  td.min50
+    padding-right: 10px
+  td.members
     vertical-align: top
-  
+    width: 350px
+    
 .even
   background-color: #F5FEFF
 

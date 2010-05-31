@@ -4,9 +4,5 @@
         
 - if @user && !@user.new_record?
   %h1
-    = @user
-  
-  .menu
-    - [["Dashboard", "users", nil]].each do |link_name, link_controller, link_path|
-      = link_to link_name, [User.find(@user.id), link_path], :class => (controller_name == link_controller) ? "current" : nil
+    Edit my profile
 %br

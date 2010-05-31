@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SMSFu
   
   #Sanitizes all the input params for POST and PUT requests
   # sanitize_params

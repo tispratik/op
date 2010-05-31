@@ -1,1 +1,32 @@
-Hello
+#projectbox
+  #gray
+    %h2
+      &nbsp;&nbsp; Personal Details
+  - semantic_form_for @usr, :url => {:controller => 'user', :action => 'updatepersonal'} do |form|
+    - form.inputs do
+      = form.input :first_name
+      = form.input :last_name
+      = form.input :one_line_bio, :label => 'One line bio', :hint => 'Describe yourself in 200 chars.'
+      = form.input :dob, :label => 'Date of birth'
+    - form.buttons do
+      = form.commit_button 'Update'
+#projectbox
+  #gray
+    %h2
+      &nbsp;&nbsp; Location
+  - semantic_form_for @contact, :url => {:controller => 'user', :action => 'updatepersonal'} do |form|
+    - form.inputs do
+      = form.input :street1, :label => 'Address Line 1'
+      = form.input :street2, :label => 'Address Line 2'
+      = form.input :one_line_bio, :label => 'One line bio', :hint => 'Describe yourself in 200 chars.'
+      = form.input :dob, :label => 'Date of birth'
+    - form.buttons do
+      = form.commit_button 'Update'
+#projectbox
+  #gray
+    %h2
+      &nbsp;&nbsp; Contact Details
+#projectbox
+  #gray
+    %h2
+      &nbsp;&nbsp; Online presence

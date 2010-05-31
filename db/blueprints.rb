@@ -24,11 +24,8 @@ Ucontact.blueprint do
   zip           { Random.zipcode }
   state         { "US.#{Random.state}" }
   telnum1       { Random.international_phone }
-  telnum2       { Random.international_phone }
   telnum1_type  { a_phone_type.rand }
-  telnum2_type  { a_phone_type.rand }
-  is_telnum1_public { Random.boolean }
-  is_telnum2_public { Random.boolean }
+  is_contact_public { Random.boolean }
   webpage1       { 'http://' + Faker::Internet.domain_name }
   webpage2       { 'http://' + Faker::Internet.domain_name }
   webpage3       { 'http://' + Faker::Internet.domain_name }
