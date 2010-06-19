@@ -4,6 +4,7 @@ class Ucontact < ActiveRecord::Base
   OP_WEBSITE_TYPE = Decode.find_all_by_name("OP_Website_Type")
   belongs_to :user
   belongs_to :country
+  belongs_to :region
   belongs_to :carrier
   
   validates_presence_of :city, :state, :country, :zip, :time_zone

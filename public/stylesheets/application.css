@@ -167,6 +167,9 @@ form.formtastic p.inline-hints {
   font-size: 11px; }
 form.formtastic .date legend label, form.formtastic .time legend label, form.formtastic .datetime legend label {
   display: block !important; }
+form.formtastic.loading li.commit {
+  padding-right: 25px;
+  background: url("../images/spinner.gif") right center no-repeat; }
 form.formtastic.labels-within-fields label.error {
   padding: 0;
   margin: 0; }
@@ -325,6 +328,27 @@ form.formtastic.stack .buttons {
   padding-left: 0; }
 form.formtastic.stack li.boolean label {
   padding-left: 0; }
+form.formtastic.inline li {
+  float: left; }
+form.formtastic.inline input {
+  width: auto; }
+form.formtastic.inline fieldset {
+  width: auto; }
+  form.formtastic.inline fieldset.inputs {
+    float: left; }
+    form.formtastic.inline fieldset.inputs label {
+      width: auto; }
+    form.formtastic.inline fieldset.inputs li {
+      margin-right: 10px; }
+  form.formtastic.inline fieldset.buttons {
+    display: inline;
+    padding: 0; }
+    form.formtastic.inline fieldset.buttons li {
+      margin-right: 10px; }
+form.formtastic.inline label.error {
+  margin: 0;
+  float: none;
+  width: auto; }
 
 html, body {
   margin: 0;
@@ -358,14 +382,34 @@ h3 {
 .gray {
   color: gray; }
 
+span.lightgray {
+  color: #CCCCC8; }
+
 span.bottom {
   vertical-align: text-bottom; }
 
+span.filetag {
+  padding: 0px 21px 0px 2px;
+  background-color: #F5F5DC;
+  color: #454542; }
+
+span.tasktag {
+  padding: 0px 15px 0px 2px;
+  background-color: #EBE1E2;
+  color: #757575; }
+
+span.feedtag {
+  padding: 0px 2px 0px 2px;
+  background-color: #DEDEE0;
+  color: #757575; }
+
+span.coedittag {
+  padding: 0px 3px 0px 2px;
+  background-color: #E1EBE2;
+  color: #757575; }
+
 span.gray {
   color: gray; }
-
-span.lightgray {
-  color: #D4D6D5; }
 
 #flash_messages .flash {
   padding: 5px 8px;
@@ -412,14 +456,15 @@ span.lightgray {
     font-size: 0.9em;
     text-decoration: none; }
   #header a.orange {
-    background-color: #357328;
-    color: white;
-    box-shadow: 0px 0px 5px #27272B;
-    -moz-box-shadow: 0px 0px 5px #27272B;
-    -webkit-box-shadow: 0px 0px 5px #27272B;
+    background-color: #FFEC6E;
+    color: black;
+    box-shadow: 0px 0px 5px #C9C873;
+    -moz-box-shadow: 0px 0px 5px #C9C873;
+    -webkit-box-shadow: 0px 0px 5px #C9C873;
     border-radius: 2px;
     -moz-border-radius: 2px;
-    -webkit-border-radius: 2px; }
+    -webkit-border-radius: 2px;
+    font-size: 1em; }
 
 #sidebar {
   width: 20%; }
@@ -456,12 +501,22 @@ span.lightgray {
       text-decoration: none;
       font-weight: bold;
       color: #FF5900; }
+  #sidebar form input[type=text] {
+    height: 18px; }
+  #sidebar form input[type=text], #sidebar form textarea {
+    border: 1px solid #aaa; }
+
+#op form input[type=text] {
+  height: 18px;
+  width: 20; }
+#op form input[type=text], #op form textarea {
+  border: 1px solid #aaa; }
 
 #content {
   width: 76%;
   float: right;
   padding: 10px 2%;
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0px 0px 6px #A8A6A0;
   -moz-box-shadow: 0px 0px 6px #A8A6A0;
   -webkit-box-shadow: 0px 0px 6px #A8A6A0;
@@ -469,11 +524,11 @@ span.lightgray {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px; }
   #content h1 {
+    background-color: #D0E4F5;
+    color: #787D7B;
     text-align: center;
-    padding: 10px 30px 10px 30px;
-    background-color: #eee;
-    color: #D97D04;
-    font-style: italic; }
+    padding: 15px;
+    line-height: 1; }
   #content .menu a {
     padding: 2px 10px 2px 10px; }
   #content .menu a.current {
@@ -517,7 +572,7 @@ table.index td, table.index th {
   padding: 5px 10px 0px 5px;
   text-align: left; }
 table.index tr.header {
-  background-color: #FFF5F5;
+  background-color: #EDEDED;
   heigth: 30px;
   color: #221C26; }
 table.index tr.header a:hover {
@@ -527,14 +582,27 @@ table.index tr.header a {
   color: #221C26;
   padding-right: 15px;
   text-decoration: none; }
+table.index td.none {
+  padding: 0px 0px 0px 0px; }
 table.index td.min200 {
   width: 200px; }
+table.index td.min100 {
+  width: 100px; }
 table.index td.min350 {
   width: 350px; }
+table.index td.min400 {
+  width: 400px; }
 table.index td.min600 {
   width: 600px; }
+table.index td.min500 {
+  width: 500px; }
 table.index td.top {
   vertical-align: top; }
+table.index td.min50 {
+  padding-right: 10px; }
+table.index td.members {
+  vertical-align: top;
+  width: 350px; }
 
 .even {
   background-color: #F5FEFF; }
@@ -599,3 +667,152 @@ del.diffmod, del.diffdel {
   #new_comment_form form#new_comment.loading li.commit {
     padding-right: 25px;
     background: url("../images/spinner.gif") right center no-repeat; }
+
+span.match {
+  background-color: #ffa; }
+
+#articles .container {
+  padding-bottom: 10px; }
+#articles .source {
+  background-color: #F7F7F7;
+  color: #8F898A;
+  padding-bottom: 1px;
+  margin-top: 10px;
+  font-size: 1em; }
+#articles .article {
+  padding: 2px; }
+  #articles .article > .left {
+    width: 70%; }
+  #articles .article .author {
+    margin-right: 10px; }
+    #articles .article .author img {
+      width: 20px;
+      height: 20px; }
+  #articles .article .title {
+    font-size: 1em;
+    padding-left: 10px; }
+    #articles .article .title .type {
+      color: #aaa; }
+  #articles .article .right {
+    color: #575455;
+    font-size: 1em;
+    text-align: right; }
+  #articles .article .content {
+    padding: 10px; }
+
+.tags #article_tag_list {
+  width: 60%; }
+
+#search_form #advanced_search input[type=text] {
+  width: 60%; }
+#search_form #advanced_search input[type=text]#search_citation_date {
+  width: 100px; }
+
+#simple_search input#search {
+  height: 18px;
+  background: url(../images/search.png) white no-repeat 2px 2px;
+  padding-left: 20px;
+  border: 1px solid #aaa; }
+#simple_search.loading {
+  background: url("../images/spinner.gif") left top no-repeat; }
+
+#attachments .attachment {
+  border: 2px solid #eee;
+  margin: 5px 0px;
+  padding: 5px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+#calendar.loading {
+  background: url("../images/spinner.gif") left top no-repeat; }
+
+#calendar {
+  margin-top: 5px;
+  padding-top: 10px; }
+
+#upcoming a {
+  background-color: #BACDD6;
+  color: black;
+  margin: 1px 1px 2px 1px; }
+#upcoming table {
+  padding: 5px 1px 5px 1px; }
+#upcoming .dayname {
+  text-align: center;
+  border-bottom: 1px solid #D1D1D1;
+  background-color: #F5F5F5; }
+#upcoming td {
+  overflow: hidden;
+  white-space: nowrap;
+  border: 1px solid #d5d5d5; }
+#upcoming .ec-event-cell {
+  cursor: pointer;
+  vertical-align: top;
+  padding-right: 1px;
+  padding-left: 2px; }
+#upcoming .ec-event-cell a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+#timesheets {
+  padding-top: 10px; }
+  #timesheets .header {
+    background-color: #eee; }
+  #timesheets .timesheet .timesheet-description, #timesheets .header .timesheet-description {
+    float: left; }
+  #timesheets .timesheet .timesheet-hours, #timesheets .header .timesheet-hours {
+    float: left;
+    width: 100px; }
+  #timesheets .timesheet .timesheet-date, #timesheets .header .timesheet-date {
+    float: left;
+    width: 100px; }
+  #timesheets .timesheet .timesheet-actions, #timesheets .header .timesheet-actions {
+    float: right;
+    width: 20px; }
+  #timesheets .timesheet .timelogs .timelog {
+    float: right; }
+    #timesheets .timesheet .timelogs .timelog .timelog-hours {
+      float: left;
+      width: 100px; }
+    #timesheets .timesheet .timelogs .timelog .timelog-date {
+      float: left;
+      width: 100px; }
+    #timesheets .timesheet .timelogs .timelog .timelog-actions {
+      float: right;
+      width: 20px; }
+
+#new_timelog #timelog_timesheet_description {
+  width: 250px; }
+
+content1 {
+  text-align: left;
+  float: left;
+  position: relative;
+  width: 45%;
+  padding: 40px; }
+
+content2 {
+  text-align: left;
+  float: right;
+  position: relative;
+  width: 45%;
+  padding: 40px; }
+
+#projectbox {
+  width: 97%;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 2px #A8A6A0;
+  -moz-box-shadow: 0px 0px 2px #A8A6A0;
+  -webkit-box-shadow: 0px 0px 2px #A8A6A0;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px; }
+  #projectbox #gray {
+    width: 97%;
+    background-color: #DFE3DE;
+    padding: 5px 3px 5px 0px; }

@@ -1,5 +1,0 @@
-var message = $('form#new_comment #comment_message');
-message.val("\n#{@comment.creator} wrote:\n> #{escape_javascript(@comment.message.gsub(/\n/, "\n> "))}");
-message.focus();
-message[0].setSelectionRange(0, 0);
-window.scrollTo(0, $("#new_comment").offset().top);

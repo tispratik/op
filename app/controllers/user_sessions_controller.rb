@@ -1,6 +1,8 @@
 class UserSessionsController < ApplicationController
   before_filter :ssl_required, :except => :destroy
   
+  skip_before_filter :login_required
+  
   def new
     @user_session = UserSession.new
   end
@@ -23,6 +25,7 @@ class UserSessionsController < ApplicationController
       current_user_session.destroy
       flash[:notice] = "Logout successful!"
       User.curr_user = nil
+      Project.current_project = nil
       @current_user = false
       #Resetting the session to avoid session fixation attacks. This session cannot be reused. Authlogic does not do it.
       reset_session

@@ -36,38 +36,3 @@ Ucontact.blueprint do
   time_zone      { ActiveSupport::TimeZone.all.rand.name }
   is_address_public   { Random.boolean }
 end
-
-Workposition.blueprint do
-  title           { Faker::Lorem.sentence }
-  start_date      { Random.date }
-  end_date        { Random.date }
-  description     { Populator.words(10..50) }
-end
-
-Education.blueprint do
-  degree          { ["BCOM", "BSC", "ENGINEERING", "MS", "PHD"].rand }
-  field           { ["Computer Science", "IT", "Architecture", "Chemical", "Medical"].rand }
-  education_type  { ["Full Time", "Part Time"].rand }
-  start_date      { Random.date }
-  end_date        { Random.date }
-  description     { Populator.words(10..30) }
-end
-
-Interest.blueprint do
-  name            { ["Sports", "Biking", "Rafting", "Singing", "Music", "Coding", "Travelling", "Space Exploration"].rand }
-  description     { Populator.words(10..30) }
-end
-
-Uprofile.blueprint do
-  summary      { Populator.words(10..30) } 
-  specialities { Populator.words(10..30) } 
-  honorsawards { Populator.words(10..30) } 
-  linkedinurl { 'http://www.linkedin.com/in/' + Faker::Name.first_name }
-end  
-
-Usocial.blueprint do
-  application { ["Facebook", "Twitter", "Orkut", "MySpace"].rand}
-  application_login { Faker::Name.first_name }
-  atoken { Random.alphanumeric }
-  asecret { Random.alphanumeric }
-end
